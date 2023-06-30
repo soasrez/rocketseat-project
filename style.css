@@ -85,13 +85,14 @@ body * {
   border-radius: 50%;
   position: absolute;
   top: 50%;
-  right: 0;
+  left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: slideback 0.3s forwards;
 }
 
 .light #switch button {
-  left: 0;
+  animation: slide 0.3s forwards;
 }
 
 #switch span {
@@ -102,6 +103,8 @@ body * {
   border: 1px solid var(--stroke-color);
   border-radius: 9999px;
 }
+
+
 
 /* LINKS*/
 
@@ -166,4 +169,27 @@ footer a {
 footer a:hover {
 color: rgb(255, 0, 191);
 size: 90px;
+}
+
+/* animations*/
+
+@keyframes slide{
+  from {
+    left: 0;
+  } 
+  to {
+    left: 50%;
+  }
+
+}
+
+
+@keyframes slideback{
+  from {
+    left: 50%;
+  } 
+  to {
+    left: 50;
+  }
+
 }
